@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOCA 3.0 — English Vocabulary Hub</title>
+<link rel="stylesheet" href="src/styles.css?v=892298ba99ee">
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+ <div class="brand"><div class="logo">V</div> voca<span style="color:#8a6af5">.</span></div>
+ <div><div class="nav-label">МЕНЮ</div><nav class="nav">
+  <button class="active" data-page="home"><span class="ico">⌂</span>Главная</button>
+  <button data-page="lesson"><span class="ico">▣</span>Моё занятие</button>
+  <button data-page="words"><span class="ico">▤</span>Словарь</button>
+  <button data-page="quiz"><span class="ico">✳</span>Тесты</button>
+  <button data-page="game"><span class="ico">◇</span>Игры</button>
+  <button data-page="assignment"><span class="ico">▧</span>От учителя</button>
+  <button data-page="tutor"><span class="ico">✦</span>Помощь</button>
+  <button data-page="review"><span class="ico">↻</span>Повторение</button><button data-page="progress"><span class="ico">▥</span>Мой прогресс</button>
+  <button data-page="teacher"><span class="ico">♙</span>Для учителя</button>
+ </nav></div>
+ <div class="side-card"><div style="font-size:24px">✨</div><strong>Маленький шаг каждый день</strong><p>Регулярная практика помогает сделать новые слова частью активного словаря.</p><button data-action="showPage" data-args="[&quot;words&quot;]">Продолжить</button></div>
+</aside>
+<main class="main"><div class="notice" id="storageNotice" role="status" hidden></div>
+ <div class="top"><div class="crumb">Обучение <span style="color:#c1c6d4">/</span> <b id="crumb">Главная</b></div><button class="profile" data-action="openProfile" data-args="[]" aria-label="Настройки профиля"><span class="avatar">V</span><span class="profileName">Мой профиль</span></button></div>
+
+ <div class="voice-panel"><p id="voiceStatus" class="note" role="status"></p><div class="tools"><button class="link" data-action="checkVoice" data-args="[]">Проверить звук</button><button class="link" data-action="stopVoice" data-args="[]">Остановить звук</button></div></div><section class="page active" id="home">
+  <div class="hero"><div class="eyebrow">YOUR ENGLISH JOURNEY STARTS HERE</div>
+  <div style="margin:0 0 7px"><span class="level-pill" id="homeLevel">Уровень не выбран</span><span class="level-pill" id="homeRole">Ученик</span></div><h1>Новые слова.<br>Новые возможности.</h1><p>Изучай английскую лексику в своём темпе — через карточки, игры и короткие тесты.</p><button class="primary" data-action="showPage" data-args="[&quot;lesson&quot;]">Начать занятие →</button><div class="hero-art">Aa</div></div>
+  <div class="stats">
+   <div class="stat"><div class="stat-top">Проверено практикой <span class="stat-icon">📚</span></div><strong id="statWords">0</strong><small>верно в двух разных занятиях</small></div>
+   <div class="stat"><div class="stat-top">Тесты пройдены <span class="stat-icon">✳</span></div><strong id="statTests">0</strong><small>продолжай практиковаться</small></div>
+   <div class="stat"><div class="stat-top">Правильные ответы <span class="stat-icon">🎯</span></div><strong id="statAccuracy">—</strong><small>точность ответов</small></div>
+   <div class="stat"><div class="stat-top">Слова для повторения</div><strong id="reviewQty">0</strong><small>во всех темах и уровнях</small></div>
+  </div>
+  <div class="section-head"><div><h2>Выбери тему</h2><p>Начни с того, что тебе интересно</p></div><button class="link" data-action="showPage" data-args="[&quot;words&quot;]">Весь словарь →</button></div>
+  <div class="topic-grid">
+   <button class="topic" data-action="showPage" data-args="[&quot;words&quot;, &quot;Food&quot;]"><span class="topic-emoji">🍓</span><span><strong>Food & Drinks</strong><small>Еда и напитки</small></span></button>
+   <button class="topic" data-action="showPage" data-args="[&quot;words&quot;, &quot;Travel&quot;]"><span class="topic-emoji">✈️</span><span><strong>Travel</strong><small>Путешествия</small></span></button>
+   <button class="topic" data-action="showPage" data-args="[&quot;words&quot;, &quot;Nature&quot;]"><span class="topic-emoji">🌿</span><span><strong>Nature</strong><small>Природа</small></span></button>
+  </div>
+  <div class="section-head"><div><h2>Тренируйся каждый день</h2><p>Выбери формат обучения</p></div></div>
+  <div class="feature-grid">
+   <button class="feature" data-action="showPage" data-args="[&quot;quiz&quot;]"><div class="big">🧠</div><h3>Быстрый тест</h3><p>Проверь, насколько хорошо ты запомнил новые слова.</p></button>
+   <button class="feature" data-action="showPage" data-args="[&quot;game&quot;]"><div class="big">🧩</div><h3>Три игры со словами</h3><p>Найди пару, собери слово или подбери его по контексту.</p></button>
+   <button class="feature" data-action="showPage" data-args="[&quot;tutor&quot;]"><div class="big">🤖</div><h3>Помощь по занятию</h3><p>Карточки, повторение и задания от учителя.</p></button>
+  </div>
+ </section>
+
+ <section class="page" id="lesson"><h1 class="page-title">Моё занятие</h1><p class="sub">Карточки → практика → разбор ошибок → повторение.</p><div class="panel narrow"><div class="selector-row"><div class="field"><label for="lessonLevel">Уровень занятия</label><select id="lessonLevel" data-change="changeLessonSelection" data-args="[]"><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></div><div class="field"><label for="lessonTheme">Тема</label><select id="lessonTheme" data-change="changeLessonSelection" data-args="[]"><option value="Food">Еда и напитки</option><option value="Travel">Путешествия</option><option value="Nature">Природа</option></select></div></div><div id="lessonBody" aria-live="polite"></div><div class="word-actions" id="lessonActions"></div></div></section>
+ <section class="page" id="words"><h1 class="page-title">Словарь</h1><p class="sub">Слова строго выбранного уровня. Учебная разметка A1–B2 ориентировочная.</p><p id="dictionaryContext" class="note"></p>
+  <div class="tabs"><button class="tab active" data-action="filterWords" data-args="[&quot;All&quot;]">Все темы</button><button class="tab" data-action="filterWords" data-args="[&quot;Food&quot;]">🍓 Food</button><button class="tab" data-action="filterWords" data-args="[&quot;Travel&quot;]">✈️ Travel</button><button class="tab" data-action="filterWords" data-args="[&quot;Nature&quot;]">🌿 Nature</button></div>
+  <div class="word-card"><div class="word-emoji" id="wEmoji">🍎</div><div class="word-en" id="wEn">apple</div><div class="pron" id="wPron">/ˈæp.əl/ · noun</div><div class="translation" id="wRu">яблоко</div><div class="example" id="wEx">I eat an apple every morning.</div><div class="word-actions"><button class="secondary" data-action="showPage" data-args="[&quot;quiz&quot;]">Тест по теме</button><button class="secondary" data-action="showPage" data-args="[&quot;game&quot;]">Игра по теме</button><button class="secondary" data-action="speakWord" data-args="[]">🔊 Прослушать</button><button class="success" data-action="markKnown" data-args="[]">✓ Карточка просмотрена</button><button class="secondary" data-action="nextWord" data-args="[]">Далее →</button></div><p class="note" id="wordCount">Карточка 1 из 12 · Нажми «Я знаю», чтобы сохранить слово</p></div>
+ </section>
+
+ <section class="page" id="quiz"><h1 class="page-title">Проверь свои знания</h1><p class="sub"><span id="quizContext"></span> · Тему можно выбрать в словаре.</p><div class="quiz-box"><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted)"><span id="qLabel">ВОПРОС 1 ИЗ 5</span><span id="qScore">0 правильных</span></div><div class="progress"><span id="qProgress"></span></div><div class="question" id="qText">Как переводится слово «apple»?</div><div class="answers" id="answers"></div><div class="feedback" id="feedback"></div><button class="primary next" id="nextQ" data-action="nextQuestion" data-args="[]" style="display:none">Далее →</button><div style="clear:both"></div></div></section>
+
+ <section class="page" id="game"><h1 class="page-title">Игры со словами</h1><p class="sub">Три способа вспомнить слово: найти перевод, собрать написание и выбрать слово по смыслу.</p>
+<div class="selector-row panel narrow"><div class="field"><label for="gameLevel">Уровень игры</label><select id="gameLevel" data-change="changeGameSelection" data-args="[]"><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></div><div class="field"><label for="gameTheme">Тема игры</label><select id="gameTheme" data-change="changeGameSelection" data-args="[]"></select></div></div>
+<div class="game-choices" role="tablist" aria-label="Выбор игры">
+<button class="game-choice" id="matchTab" role="tab" aria-controls="matchGame" aria-selected="true" data-game="match"><span aria-hidden="true">🧩</span><strong>Найди пару</strong><small>Слово и перевод · 4 пары</small></button>
+<button class="game-choice" id="spellTab" role="tab" aria-controls="spellGame" aria-selected="false" data-game="spell"><span aria-hidden="true">🔤</span><strong>Собери слово</strong><small>Вспомни написание · 5 слов</small></button>
+<button class="game-choice" id="contextTab" role="tab" aria-controls="contextGame" aria-selected="false" data-game="context"><span aria-hidden="true">💬</span><strong>Слово в контексте</strong><small>Пойми предложение · 5 заданий</small></button>
+</div><p class="note" id="gameContext"></p>
+<div class="panel narrow" id="matchGame" role="tabpanel" aria-labelledby="matchTab"><h2>Найди пару</h2><p class="game-rule">Выбери русское слово слева и английское справа или наоборот. Цель — вспомнить значение. После ошибки увидишь правильную пару, а слово попадёт в повторение.</p><div class="tools"><span id="gameStatus" role="status"></span><button class="link" data-action="newGame" data-args="[]">Начать заново</button></div><div class="match-grid" id="matchGrid"></div></div>
+<div class="panel narrow" id="spellGame" role="tabpanel" aria-labelledby="spellTab" hidden><h2>Собери слово</h2><p class="game-rule">Собери английское слово из букв по русскому переводу. Пробелы уже расставлены. Цель — вспомнить написание; после проверки увидишь ответ и пример.</p><div id="spellBody" aria-live="polite"></div><div id="spellActions" class="tools"></div></div>
+<div class="panel narrow" id="contextGame" role="tabpanel" aria-labelledby="contextTab" hidden><h2>Слово в контексте</h2><p class="game-rule">Выбери слово, подходящее по смыслу в пропуск. Цель — понять употребление слова. После ответа появятся предложение целиком и перевод.</p><div id="contextBody" aria-live="polite"></div><div id="contextActions" class="tools"></div></div>
+<p class="note">Ошибки всех трёх игр попадают в «Повторение». Баллы раунда показываются здесь; показатель «Проверено практикой» меняется после учебных тестов.</p>
+</section>
+
+ <section class="page" id="review"><h1 class="page-title">Повторение ошибок</h1><p class="sub">Слова из практики и игры. Они остаются здесь до правильного ответа в повторении.</p><button class="primary" data-action="startReview" data-args="[]">Начать повторение</button><div class="review-list panel narrow" id="reviewList" style="margin-top:16px"></div></section><section class="page" id="tutor"><h1 class="page-title">Помощь по занятию</h1><p class="sub">Ответы на частые вопросы.</p><div class="panel narrow"><details open><summary>Как вернуться к трудному слову?</summary><p>Открой вкладку «Повторение». Ошибки из практики и игры сохраняются здесь до правильного ответа в повторении.</p></details><details><summary>Как передать результат учителю?</summary><p>Открой присланный JSON-файл на вкладке «От учителя», ответь на вопросы и скачай файл результата. Передай его учителю, например через школьный канал связи. Учитель откроет файл в своём конструкторе. Автоматической отправки пока нет.</p></details><details><summary>Где выбрать уровень и роль?</summary><p>Нажми кнопку профиля вверху страницы. Уровень и тему занятия можно поменять прямо над карточками. Изменение уровня действует во всех учебных разделах.</p></details></div></section>
+
+ <section class="page" id="progress"><h1 class="page-title">Мой прогресс</h1><p class="sub">Следи за результатами и отмечай свои достижения.</p><div class="stats"><div class="stat"><div class="stat-top">Проверено практикой</div><strong id="pWords">0</strong><small>верно в двух разных занятиях</small></div><div class="stat"><div class="stat-top">Тесты</div><strong id="pTests">0</strong><small>завершено</small></div><div class="stat"><div class="stat-top">Точность</div><strong id="pAcc">—</strong><small>правильные ответы</small></div><div class="stat"><div class="stat-top">Достижения</div><strong id="pBadges">0</strong><small>открыто</small></div></div><div class="panel" style="margin-top:18px;max-width:650px"><h3 style="margin:0 0 8px">Твой учебный путь</h3><p class="note" id="seenCount"></p><div class="bar-row"><span>Доля слов, проверенных практикой</span><b id="vPercent">0%</b></div><div class="bar"><i id="vBar" style="width:0%"></i></div><div class="bar-row"><span>Первый тест</span><b id="tPercent">0%</b></div><div class="bar"><i id="tBar" style="width:0%"></i></div><p class="note">Результаты сохраняются в этом браузере на данном устройстве. Просмотр карточки не доказывает запоминание. Два успешных занятия — внутренний показатель практики, а не оценка владения языком.</p></div><div class="tools"><button class="secondary" data-action="exportProgress" data-args="[]">Скачать прогресс</button><button class="secondary" data-action="resetProgress" data-args="[]">Сбросить учебный прогресс</button></div></section>
+
+ <section class="page" id="teacher">
+<h1 class="page-title">Конструктор заданий</h1><p class="sub">Собери карточки, пройди задание глазами ученика и сохрани версию для класса.</p>
+<div class="studio"><div class="panel" id="taskForm"><h2>Черновик</h2><div class="field"><label for="taskTitle">Название задания</label><input id="taskTitle" maxlength="80"></div>
+<div class="editTop"><div class="field"><label for="taskLevel">Уровень</label><select id="taskLevel"><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></div>
+<div class="field"><label for="direction">Направление</label><select id="direction"><option value="en-ru">Английский → русский</option><option value="ru-en">Русский → английский</option></select></div></div>
+<div class="field"><label for="taskTheme">Тема банка слов</label><select id="taskTheme"><option value="Travel">Путешествия</option><option value="Food">Еда и напитки</option><option value="Nature">Природа</option></select></div><p class="note">Для нового набора выбери уровень и тему, затем нажми «Взять слова темы». Изменение уровня само по себе не заменяет твой черновик.</p><h3>Слова и переводы</h3><div id="editRows"></div><div class="tools"><button class="secondary" id="addCard">Добавить карточку</button><button class="secondary" id="fromBank">Взять слова темы</button></div><div class="tools"><button class="secondary" id="tryTask">Предпросмотр</button><button class="primary" id="releaseTask">Сохранить версию</button></div><p role="status" id="teacherMsg">Черновик сохраняется в этом браузере.</p></div>
+<div class="stack"><div class="panel"><h2>Мои задания</h2><p>Скачай задание и передай файл ученику. Он откроет его в VOCA на вкладке «От учителя», выполнит и вернёт файл результата. Автоматической отправки и общей комнаты пока нет.</p><div id="savedTasks"></div></div>
+<div class="panel"><h2>Результаты</h2><label class="fileLabel">Открыть файл результата<input id="resultFile" type="file" accept=".json,application/json"></label><p role="status" id="resultMsg"></p><p class="note">Результаты самопроверки под псевдонимом. Файл можно изменить вручную.</p><div id="reports"></div></div></div></div></section><section class="page" id="assignment"><h1 class="page-title">От учителя</h1><p class="sub">Открой задание и в конце скачай результат для учителя.</p><div class="panel narrow" id="openTask"><div class="field"><label for="alias">Псевдоним для результата (по желанию)</label><input id="alias" maxlength="32" placeholder="Ученик"></div><label class="fileLabel">Открыть файл задания<input type="file" accept=".json,application/json" id="assignmentFile"></label><p id="assignmentMsg" role="status"></p></div><div id="runBody" class="panel narrow" aria-live="polite"></div></section>
+
+</main></div><div class="toast" id="toast" role="status"></div>
+
+<div class="onboard-backdrop" id="onboard">
+ <div class="onboard" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+  <div class="eyebrow" style="color:var(--blue)">WELCOME TO VOCA</div>
+  <h2 id="profileTitle">С чего начнём твоё обучение?</h2>
+  <p>Выбери уровень и роль. На общем компьютере результаты доступны всем, кто пользуется этим профилем браузера.</p>
+
+
+  <div class="field"><label>Как ты оцениваешь свои знания?</label>
+   <div class="choice-grid">
+    <button class="choice active" data-level="A1" data-action="chooseAssessment" data-args="[]"><b>Новичок</b><small>Почти не знаю английский</small></button>
+    <button class="choice" data-level="A2" data-action="chooseAssessment" data-args="[]"><b>Учил, но уже ничего не помню</b><small>Что-то помню, но нужна база</small></button>
+    <button class="choice" data-level="B1" data-action="chooseAssessment" data-args="[]"><b>Учил, есть база</b><small>Могу читать и строить фразы</small></button>
+    <button class="choice" data-level="B2" data-action="chooseAssessment" data-args="[]"><b>Профи</b><small>Общаюсь на знакомые темы</small></button>
+
+
+   </div>
+  </div>
+  <p class="note">Самооценка — подсказка для выбора. Точный уровень она не определяет.</p><div class="field"><label for="profileLevel">Уровень английского</label><select id="profileLevel"><option>A1</option><option>A2</option><option>B1</option><option>B2</option></select></div><div class="field"><label for="ageGroup">Подача примеров (необязательно)</label><select id="ageGroup"><option value="neutral">Без предпочтений</option><option value="school">Школьная</option><option value="adult">Для взрослых</option></select></div><div class="field"><label for="userRole">Какую роль выбрать?</label><select id="userRole"><option value="student">Я изучаю английский</option><option value="teacher">Я учитель английского</option></select></div>
+  <button class="primary" style="width:100%;margin-top:8px" data-action="saveOnboarding" data-args="[]">Сохранить настройки →</button>
+  <button class="secondary" id="cancelProfile" data-action="closeProfile" data-args="[]" hidden>Отмена</button><p class="note">В этой версии настройки сохраняются только в браузере на текущем устройстве. Регистрация пока не подключена.</p>
+ </div>
+</div>
+
+
+<script src="src/data.js?v=3149132a5c09"></script>
+<script src="src/domain.js?v=aa442429981f"></script>
+<script src="src/storage.js?v=0fb71b43d48f"></script>
+<script src="src/speech.js?v=98939ea51167"></script>
+<script src="src/app.js?v=34c6fb261086"></script>
+<script src="src/games.js?v=d210dd5ba0fc"></script>
+<script src="src/workshop.js?v=e5d7a218ec95"></script>
+<script src="src/boot.js?v=34ca39c8ccbe"></script>
+</body></html>
